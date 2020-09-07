@@ -3041,7 +3041,7 @@ require'nvim_lsp'.omnisharp.setup{}
   Commands:
   
   Default Values:
-    cmd = { "/home/runner/.cache/nvim/nvim_lsp/omnisharp/run", "--languageserver", "--hostPID", "2652" }
+    cmd = { "/home/runner/.cache/nvim/nvim_lsp/omnisharp/run", "--languageserver", "--hostPID", "2872" }
     filetypes = { "cs", "vb" }
     init_options = {}
     on_new_config = <function 1>
@@ -5069,6 +5069,10 @@ This server accepts configuration via the `settings` key.
   Default: `true`
   
   Validate vue\-html in \<template\> using eslint\-plugin\-vue
+
+- **`vetur.validation.templateProps`**: `boolean`
+
+  Validate props usage in \<template\> region\. Show error\/warning for not passing declared props to child components\.
 
 </details>
 
