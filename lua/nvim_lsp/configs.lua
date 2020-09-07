@@ -98,8 +98,13 @@ function configs.__newindex(t, config_name, config_def)
     else
       trigger = "BufReadPost *"
     end
+    local group = 'nvim_lspconfig_' .. config.name
     api.nvim_command(string.format(
-        "autocmd %s lua require'nvim_lsp'[%q].manager.try_add()"
+        'augroup %s | exe "autocmd!" | augroup END',
+        group))
+    api.nvim_command(string.format(
+        "autocmd %s %s lua require'nvim_lsp'[%q].manager.try_add()"
+        , group
         , trigger
         , config.name
         ))
